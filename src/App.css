@@ -42,8 +42,8 @@ img {
 .column > h2 {
   color: white;
   font-size: calc(10px + 5vmin);
-  position: absolute;
   bottom: -100px;
+  position: absolute;
   width: 100%;
   visibility: hidden;
 }
