@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import deathNoteImg from './deathNote.jpg';
+import blackMirrorImg from './blackMirror.jpg';
+import breakingBadImg from './breakingBad.jpg';
+import deathNoteImg from './deathNote.jpg'
 import gameOfThronesImg from './gameOfThrones.jpg';
 import theWireImg from './theWire.jpg';
 import theWalkingDeadImg from './theWalkingDead.jpg';
 import TvShow from './tvShowComponent';
-
 
 class App extends Component {
   render() {
@@ -13,29 +14,19 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         </header>
-          <main>
-          <div className = "row">
-            <TvShow name = "Black Mirror" img = 'http://www.randomhousebooks.com/wp-content/uploads/2017/09/BLACK-MIRROR-ART.jpg' />
-            <TvShow name = "Breaking Bad" 
-              img = 
-              'http://www.coverwhiz.com/content/Breaking-Bad-Season-5.jpg' />
-            <div className="column">
-            <h2>Death Note</h2>
-            <img src = {deathNoteImg} alt ="Death Note Cover"></img></div>
+        <main>
+          <div className="row">
+            <TvShow name = "Black Mirror" img = {blackMirrorImg} />
+            <TvShow name = "Breaking Bad" img = {breakingBadImg} />
+            <TvShow name = "Death Note" img= {deathNoteImg} />
           </div>
           <div className = "row">
-            <div className="column">
-            <h2>Game of Thrones</h2>
-            <img src = {gameOfThronesImg} alt ="Game of Thrones Cover"></img></div>
-            <div className="column">
-            <h2>The Wire</h2>
-            <img src = {theWireImg} alt ="The Wire Cover"></img></div>
-            <div className="column">
-            <h2>The Walking Dead</h2>
-            <img src = {theWalkingDeadImg} alt ="The Walking Dead Cover"></img></div>
+            <TvShow name = "Game of Thrones" img= {gameOfThronesImg} />
+            <TvShow name = "The Wire" img = {theWireImg}  />
+            <TvShow name= "The Walking Dead" img= {theWalkingDeadImg} />
           </div>
-          </main>
-        </div>
+        </main>
+      </div>
     );
   }
 }

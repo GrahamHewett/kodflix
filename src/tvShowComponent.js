@@ -11,4 +11,5 @@ export default class TvShow extends React.Component {
   };
 
 //import TvShow from './tvShowComponent'; at top
+// don't forget an export default statement
 // <TvShow /> in App return statement
