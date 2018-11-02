@@ -17,7 +17,7 @@ const Details = () => (
 );
 const About = () => (
   <div>
-    <h2>About</h2>
+    <h2>About Example</h2>
     This example shows how to use React Router!
   </div>
 );
