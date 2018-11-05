@@ -8,13 +8,10 @@ import deathNoteImg from './deathNote.jpg'
 import gameOfThronesImg from './gameOfThrones.jpg';
 import theWireImg from './theWire.jpg';
 import TvShow from './tvShowComponent';
+import Details from './detailsPage';
+import Home from './home'
 import theWalkingDeadImg from './theWalkingDead.jpg';
 
-const Details = () => (
-  <div>
-    Hello, this will be the details page for each Movie & TV show :)
-    </div>
-);
 const About = () => (
   <div>
     <h2>About Example</h2>
@@ -24,7 +21,6 @@ const About = () => (
 
 class App extends Component {
 
-
   render() {
     return (
       <div className="App">
@@ -33,28 +29,16 @@ class App extends Component {
           <div className="menu">
             <ul>
               <li> <Link to="/">Home</Link> </li>
-              <li> <Link to="/about">About</Link> </li>
               <li> <Link to="/details">Details</Link> </li>
-              <li><a href="/messages">Messages (with a regular a tag)</a> 
-  </li>
+              <li><a href="/messages">Messages (with a regular a tag)</a></li>
             </ul>
-          </div>
-          <Route path="/about" component={About}/>
-          <Route path="/details" component={Details}/>
+        </div>
         </div>
         </header>
-        <main>
-          <div className="row">
-            <TvShow name = "Black Mirror" img = {blackMirrorImg} />
-            <TvShow name = "Breaking Bad" img = {breakingBadImg} />
-            <TvShow name = "Death Note" img= {deathNoteImg} />
-          </div>
-          <div className = "row">
-            <TvShow name = "Game of Thrones" img= {gameOfThronesImg} />
-            <TvShow name = "The Wire" img = {theWireImg}  />
-            <TvShow name= "The Walking Dead" img= {theWalkingDeadImg} />
-          </div>
-        </main>
+        <div>
+          <Route path="/details" component={Details}/>
+          <Route path ="/" component={Home}/>
+        </div>
       </div>
     );
   }
