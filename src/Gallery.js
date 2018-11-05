@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TvShow from './tvShowComponent';
+import TvShow from './TvShow';
 
 import blackMirrorImg from './media/blackMirror.jpg';
 import breakingBadImg from './media/breakingBad.jpg';

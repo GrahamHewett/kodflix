@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from "react-router-dom";
-import Gallery from './gallery';
-import Details from './detailsPage';
+import Gallery from './Gallery';
+import Details from './DetailsPage';
 
 function Id({ match }) {
     return (
