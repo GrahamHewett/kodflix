@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import TvShow from './TvShow';
 
-import blackMirrorImg from './media/blackMirror.jpg';
-import breakingBadImg from './media/breakingBad.jpg';
-import deathNoteImg from './media/deathNote.jpg'
-import gameOfThronesImg from './media/gameOfThrones.jpg';
-import theWireImg from './media/theWire.jpg';
-import theWalkingDeadImg from './media/theWalkingDead.jpg';
+import blackMirrorImg from './blackMirror.jpg';
+import breakingBadImg from './breakingBad.jpg';
+import deathNoteImg from './deathNote.jpg'
+import gameOfThronesImg from './gameOfThrones.jpg';
+import theWireImg from './theWire.jpg';
+import theWalkingDeadImg from './theWalkingDead.jpg';
 
 class Gallery extends Component {
 

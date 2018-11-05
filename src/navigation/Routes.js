@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Route } from "react-router-dom";
-import Gallery from './Gallery';
-import Details from './DetailsPage';
+import { Route, Link } from "react-router-dom";
+import Gallery from '../gallery/Gallery';
 
 function Id({ match }) {
     return (
       <div>
         <h2>Id: {match.params.id}</h2>
+        <Link to = "/" exact>Back to List of Movies</Link> 
       </div>
     );
 }
@@ -16,7 +16,6 @@ export default class Routes extends React.Component {
     return (
       <div>
         <Route path ="/" component={Gallery} exact />
-        <Route path="/details" component={Details} exact/>
         <Route path="/:id" component={Id} exact/>
       </div>
     )}
