@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
+import TvShow from './tvShowComponent';
 
-import './App.css';
 import blackMirrorImg from './blackMirror.jpg';
 import breakingBadImg from './breakingBad.jpg';
 import deathNoteImg from './deathNote.jpg'
 import gameOfThronesImg from './gameOfThrones.jpg';
 import theWireImg from './theWire.jpg';
-import TvShow from './tvShowComponent';
 import theWalkingDeadImg from './theWalkingDead.jpg';
 
 class Home extends Component {
