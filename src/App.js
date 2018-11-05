@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Link, Route } from "react-router-dom";
+import Routes from './routesComponent';
 
-import './App.css';
-import Home from './home'
-import Details from './detailsPage';
+import './css/App.css';
 
 class App extends Component {
 
@@ -14,10 +12,7 @@ class App extends Component {
           <div className="menu">
           </div>
         </header>
-        <div>
-          <Route path ="/" component={Home} exact />
-          <Route path="/details" component={Details} exact/>
-        </div>
+        <Routes />
       </div>
     );
   }

@@ -6,7 +6,7 @@ export default class TvShow extends React.Component {
         return (
     <div className="column">
       <h2>{this.props.name}</h2>
-      <NavLink to="/details" exact activeStyle= { {color: 'orange' } } >
+      <NavLink to= {this.props.id} exact >
       <img src = {this.props.img} alt ={this.props.name + ' Cover'}></img>
       </NavLink>
     </div>

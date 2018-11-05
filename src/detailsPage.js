@@ -1,9 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Details = () => (
+const Details = (match) => (
   <div>
-    <p>Hello, this will be the details page for each Movie &amp; TV show :) </p>
+    <p>Hello, this will be the details page for {match.params.id} </p>
     <Link to = "/" exact>Back to List of Movies</Link> 
     </div>
 );
