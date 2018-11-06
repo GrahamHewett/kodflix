@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom'
 export default class TvShow extends React.Component {
     render() {
         return (
-    <div className="column">
+    <div className="cover">
       <h2>{this.props.name}</h2>
       <NavLink to= {this.props.id} exact >
       <img src = {this.props.img} alt ={this.props.name + ' Cover'}></img>

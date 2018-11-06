@@ -33,13 +33,13 @@ img {
   width: 100%;
   height: 100%;
 }
-.column { 
+.cover { 
   flex: 1; /* same as flex: 1 1 0; */
   margin: 5px;
   position: relative;
   overflow: hidden;
 }
-.column > h2 {
+.cover > h2 {
   color: white;
   font-size: calc(10px + 5vmin);
   bottom: -100px;
@@ -47,7 +47,7 @@ img {
   width: 100%;
   visibility: hidden;
 }
-.column:hover > h2 {
+.cover:hover > h2 {
   background-color: black;
   visibility: visible;
   bottom: 0;
