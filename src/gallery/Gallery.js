@@ -12,17 +12,13 @@ class Gallery extends Component {
 
   render() {
     return (
-      <div className="main">
-        <div className="row">
+      <div className="gallery">
           <TvShow name = "Black Mirror" img = {blackMirrorImg} id = "black-mirror"/>
           <TvShow name = "Breaking Bad" img = {breakingBadImg} id = "breaking-bad"/>
           <TvShow name = "Death Note" img= {deathNoteImg} id = "death-note"/>
-        </div>
-        <div className = "row">
           <TvShow name = "Game of Thrones" img= {gameOfThronesImg} id = "game-of-thrones"/>
           <TvShow name = "The Wire" img = {theWireImg}  id = "the-wire"/>
           <TvShow name= "The Walking Dead" img= {theWalkingDeadImg} id = "the-walking-dead"/>
-        </div>
       </div>
     );
   }
