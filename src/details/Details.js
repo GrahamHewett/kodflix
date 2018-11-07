@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import movieData from '../movie-data'
+import { Redirect } from "react-router-dom";
 
 export default class StatefulDetails extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export default class StatefulDetails extends Component {
 
   componentDidMount() {
       let found = movieData.find((movie) => movie.id === this.props.match.params.id)
-      let name = found ? found.title : "That movie doesn't exist"
+      let name = found ? found.title : <Redirect to='/not-found' />
       this.setState({ title: name });
     };
 
