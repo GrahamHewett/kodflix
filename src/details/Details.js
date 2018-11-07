@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import movieData from './movie-data'
+import movieData from '../movie-data'
 
 export default class StatefulDetails extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from "react-router-dom";
 import Gallery from '../gallery/Gallery';
-import Details from '../Details';
+import Details from '../details/Details';
 
 export default class Routes extends React.Component {
   render() {
