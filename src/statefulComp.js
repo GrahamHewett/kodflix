@@ -4,7 +4,7 @@ export default class StateComponent extends React.Component {
     constructor (props){
         super (props);
     this.state = {
-        message: "Change this message into coming soon", key2: 'value2',
+        message: "Change this message into coming soon"
     }
     this.changeMessageMethod = this.changeMessageMethod.bind(this);
 }
