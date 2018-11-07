@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
-import movieData from './gallery-get';
+import movieData from '../movie-data';
 
 class Gallery extends React.Component {
   render() {
