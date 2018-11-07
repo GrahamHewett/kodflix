@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export default class StateComponent extends React.Component {
     constructor (props){
@@ -10,13 +10,14 @@ export default class StateComponent extends React.Component {
 }
 
 changeMessageMethod() {
-    this.setState({message: "Coming Soon!"})
+   return setTimeout(() => this.setState({message: "Coming Soon!"}), 3000)
 }    
 render() {
     return (
         //Any Valid JSX code E.g.
       <div>
         <button onClick={this.changeMessageMethod}>Click Me</button>
+        <div onLoad={this.changeMessageMethod}> </div>
         <h1>{this.state.message}</h1>
       </div>
     );
