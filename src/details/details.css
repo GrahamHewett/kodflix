@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+  }
+
+#container {
+    display: grid;
+    padding: 30px;
+    grid-template-rows: 1fr 9fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+img {
+  height: 0.5vh;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif
+  }
+
+  .title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .synopsis {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .image {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    height: 0.5vh;
+  }
