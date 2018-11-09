@@ -1,40 +1,80 @@
-* {
-    margin: 0;
-  }
-
 #container {
     display: grid;
-    padding: 30px;
-    grid-template-rows: 1fr 9fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    grid-template-columns: 4fr 3fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    background: radial-gradient(rgb(0,0,0), rgb(65,65,65));
+    font-family: 'Montserrat', sans-serif;
+}
+/* grid positions and sizes */
+.title {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
-img {
-  height: 0.5vh;
+.synopsis {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  max-height: 80vh;
+  align-self: center;
+}
+
+.details-image {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  max-height: 80vh;
+}
+.return-link {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+/* child element styles */
+.title > h1 {
+    font-size: calc(20px + 3vw);
+    color: #E50914;
+    padding-top: 20px;
+}
+
+.synopsis p{
+    color: rgb(255,255,255);
+    font-size: calc(10px + 1.6vw);
+    line-height: 1.25em;
+    padding: 0px 20px 0px 20px;
+    max-height: 80vh;
+    font-family: 'Courier New', Courier, monospace;
   }
 
-  body {
-    font-family: 'Montserrat', sans-serif
+.details-image img {
+    max-height: 80vh;
+} 
+
+.return-link a {
+    font-size: calc(12px + 1vw);
+    padding-bottom: 20px;
+    color: red;
   }
 
-  .title {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+@media screen and (max-width: 650px) {
+  #container { 
+    display: block;
   }
-
-  .synopsis {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
+  .synopsis, .synopsis > p {
+    padding: 20px;
   }
-
-  .image {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    height: 0.5vh;
+  .details-img, .details-image img {
+    max-height: 40vh;
   }
+  .return-link a{
+  }
+}
