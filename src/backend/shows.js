@@ -5,15 +5,14 @@ const gameOfThronesSynopsis = "Game of Thrones is an American fantasy drama tele
 const theWireSynopsis = "Set in Baltimore, this show centers around the city's inner-city drug scene. It starts as mid-level drug dealer, D'Angelo Barksdale beats a murder rap. After a conversation with a judge, Det. James McNulty has been assigned to lead a joint homicide and narcotics team, in order to bring down drug kingpin Avon Barksdale. The show depicts the lives of every part of the drug 'food chain', from junkies to dealers, and from cops to politicians."
 const theWalkingDeadSynopsis = "The Walking Dead, based on the comic book series written by Robert Kirkman and published by Image Comics, tells the story of the months and years that follow after a zombie apocalypse. It follows a group of survivors, led by police officer Rick Grimes, who travel in search of a safe and secure home. The series goes on to explore the challenges of life in a world overrun by zombies. Sometimes it is the interpersonal conflicts that present a greater danger to the group's survival than the zombies that roam the country."
 
-
 let data =
     [
-        { title: "Black Mirror", imgSrc: film1, id: "black-mirror", synopsis: blackMirrorSynopsis },
-        { title: "Breaking Bad", imgSrc: film2, id: "breaking-bad", synopsis: breakingBadSynopsis },
-        { title: "Death Note", imgSrc: film3, id: "death-note", synopsis: deathNoteSynopsis },
-        { title: "Game of Thrones", imgSrc: film4, id: "game-of-thrones", synopsis: gameOfThronesSynopsis },
-        { title: "The Wire", imgSrc: film5, id: "the-wire", synopsis: theWireSynopsis},
-        { title: "The Walking Dead", imgSrc: film6, id: "the-walking-dead", synopsis: theWalkingDeadSynopsis},
+        { title: "Black Mirror", id: "black-mirror", synopsis: blackMirrorSynopsis },
+        { title: "Breaking Bad", id: "breaking-bad", synopsis: breakingBadSynopsis },
+        { title: "Death Note", id: "death-note", synopsis: deathNoteSynopsis },
+        { title: "Game of Thrones", id: "game-of-thrones", synopsis: gameOfThronesSynopsis },
+        { title: "The Wire", id: "the-wire", synopsis: theWireSynopsis},
+        { title: "The Walking Dead", id: "the-walking-dead", synopsis: theWalkingDeadSynopsis},
     ]
 
-    module.exports.data = data;
+module.exports.data = data;
