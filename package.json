@@ -16,7 +16,6 @@
     "eject": "react-scripts eject",
     "start-backend": "nodemon src/backend/app.js",
     "start-all": "npm-run-all -p start start-backend"
-
   },
   "eslintConfig": {
     "extends": "react-app"
