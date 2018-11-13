@@ -10,7 +10,7 @@
     "express": "~4.16.4"
   },
   "scripts": {
-    "start": "run-s build start-backend",
+    "start": "npm-run-all -s build start-backend",
     "start-frontend": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
