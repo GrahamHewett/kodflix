@@ -8,6 +8,9 @@ export default class StatefulDetails extends Component {
     super(props);
     //Must initialise state first
     this.state = {
+      error: null,
+      isLoaded: false,
+      shows: [],
       title: '',
       synopsis: 'Default Synopsis',
       image: 'Default Image',
@@ -16,6 +19,27 @@ export default class StatefulDetails extends Component {
   }
   //Method to alter the state
   componentDidMount() {
+    fetch("/rest/shows")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          shows: result
+        });
+      },
+      // Note: it's important to handle errors here
+      // instead of a catch() block so that we don't swallow
+      // exceptions from actual bugs in components.
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      }
+    )
+
+
     let found = this.state.data.find((movie) => movie.id === this.props.match.params.id)
     let name = found ? found.title : <Redirect to='/not-found' />
     let description = found ? found.synopsis : "No Synopsis Given"
