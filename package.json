@@ -7,7 +7,8 @@
     "react-dom": "^16.5.2",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
-    "express": "~4.16.4"
+    "express": "~4.16.4",
+    "npm-run-all": "^4.1.3"
   },
   "scripts": {
     "start-dev": "npm-run-all -p start-frontend _start-backend",
@@ -28,8 +29,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "ajv": "^6.5.5",
-    "npm-run-all": "^4.1.3"
+    "ajv": "^6.5.5"
   },
   "proxy": "http://localhost:3001"
 }
