@@ -1,23 +1,23 @@
 import React from 'react';
 
-class FetchShows extends React.Component {
+export default class FetchShows extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      shows: []
     };
   }
 
   componentDidMount() {
-    fetch("http://localhost:3001/rest/shows")
+    fetch("/rest/shows")
       .then(res => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            shows: result
           });
         },
         // Note: it's important to handle errors here
@@ -33,7 +33,7 @@ class FetchShows extends React.Component {
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, shows } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -41,9 +41,10 @@ class FetchShows extends React.Component {
     } else {
       return (
         <ul>
-          {items.map(item => (
-            <li key={item.name}>
-              {item.name} {item.price}
+          {shows.map(show => (
+            <li key={show.title}>
+              <p>{show.title}</p> 
+              <p>{show.synopsis}</p>
             </li>
           ))}
         </ul>
