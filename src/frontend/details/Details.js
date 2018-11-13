@@ -11,11 +11,12 @@ export default class StatefulDetails extends Component {
       title: '',
       synopsis: 'Default Synopsis',
       image: 'Default Image',
+      data: movieData
     }
   }
   //Method to alter the state
   componentDidMount() {
-    let found = movieData.find((movie) => movie.id === this.props.match.params.id)
+    let found = this.state.data.find((movie) => movie.id === this.props.match.params.id)
     let name = found ? found.title : <Redirect to='/not-found' />
     let description = found ? found.synopsis : "No Synopsis Given"
     let picture = found ? <img src = {found.imgSrc} alt="Movie Cover"></img> : "No Image Available"
