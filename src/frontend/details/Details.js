@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-import movieData from '../movie-data'
+//import movieData from '../movie-data'
 import { Link, Redirect } from "react-router-dom";
 import './details.css'
+import noImage from '../no-image.svg'
 
 export default class StatefulDetails extends Component {
   constructor(props) {
     super(props);
-    //Must initialise state first
     this.state = {
       error: null,
       isLoaded: false,
-      shows: [],
       title: '',
       synopsis: 'Default Synopsis',
       image: 'Default Image',
-      data: movieData
+      data: [{title: 'new movie'}]
     }
   }
   //Method to alter the state
@@ -25,42 +24,47 @@ export default class StatefulDetails extends Component {
       (result) => {
         this.setState({
           isLoaded: true,
-          shows: result
+          data: result
         });
       },
-      // Note: it's important to handle errors here
-      // instead of a catch() block so that we don't swallow
-      // exceptions from actual bugs in components.
       (error) => {
         this.setState({
           isLoaded: true,
-          error
+          error: error
         });
       }
     )
-
-
+    .then( () => {
     let found = this.state.data.find((movie) => movie.id === this.props.match.params.id)
     let name = found ? found.title : <Redirect to='/not-found' />
     let description = found ? found.synopsis : "No Synopsis Given"
-    let picture = found ? <img src = {found.imgSrc} alt="Movie Cover"></img> : "No Image Available"
-
-      this.setState({ 
-        title: name,
-        synopsis: description,
-        image: picture 
+    let picture = found.title ? 
+    <img src = {require(`../${found.id}.jpg`)} alt={`${found.title} Cover`}></img> : 
+    <img src = {noImage} alt="Movie Cover"></img>
+    
+    this.setState({ 
+       title: name,
+       synopsis: description,
+       image: picture,
       });
-
+    })
   };
 
   render() {
+    const { error, isLoaded, title, synopsis, image } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
     return (
       <div id="container">
-        <div className="title"><h1>{this.state.title}</h1></div>
-        <div className="synopsis"><p>{this.state.synopsis}</p></div>
-        <div className="details-image">{this.state.image}</div>
+        <div className="title"><h1 key={title}>{title}</h1></div>
+        <div className="synopsis"><p>{synopsis}</p></div>
+        <div className="details-image">{image}</div>
         <div className="return-link" ><Link exact to="/">Home</Link></div> 
       </div>
     );
+    }
   }
 };
