@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from "react-router-dom";
 import './details.css'
-// import noImage from '../no-image.svg'
 
 export default class StatefulDetails extends Component {
   constructor(props) {
@@ -9,10 +8,9 @@ export default class StatefulDetails extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      shows: [],
+      show: [],
     }
   }
-  //Method to alter the state
   componentDidMount() {
     fetch("/rest/shows")
     .then(res => res.json())
