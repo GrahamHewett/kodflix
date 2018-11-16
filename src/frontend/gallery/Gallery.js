@@ -1,19 +1,52 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
-import movieData from '../movie-data';
+import { NavLink, Redirect } from 'react-router-dom'
 
 class Gallery extends React.Component {
-  render() {
-      let iterateMovies = movieData.map((movie) =>
-          <div className="cover">
-              <h2>{movie.title}</h2>
-              <NavLink to={movie.id} exact >
-                  <img src={movie.imgSrc} alt={`${movie.title} Cover`}></img>
-              </NavLink>
-          </div>)
+    constructor(props) {
+        super(props);
+        this.state = {
+          error: null,
+          isLoaded: false,
+          shows: [],
+        }
+      }
 
-      return (<div className = 'gallery'>{iterateMovies}</div>)
-  }
-};
+    componentDidMount() {
+       fetch("/rest/shows")
+       .then(res => res.json())
+       .then(
+         (result) => {
+           this.setState({
+             isLoaded: true,
+             shows: result
+           });
+         },
+         (error) => {
+            this.setState({
+              isLoaded: true,
+              error: error
+            });
+          }
+        )
+    }
+    render() {
+      const { error, isLoaded, shows } = this.state;
 
+      if (error) {
+        return <div>Error: {error.message}</div>;
+      } else if (!isLoaded) {
+          return <div className="loader">Loading</div>
+      } else if (shows === undefined) {
+          return <Redirect to="/not-found" />
+      } else {
+        return (<div className = 'gallery'>{shows.map((show) =>
+            <div className = "cover" key= {show.id}>
+                <h2>{show.title}</h2>
+                <NavLink to={show.id} exact >
+                    <img src={require(`../${show.id}.jpg`)} alt={`${show.title} Cover`}></img>
+                </NavLink>
+            </div>)}</div>)
+        }
+      }
+    };
 export default Gallery;

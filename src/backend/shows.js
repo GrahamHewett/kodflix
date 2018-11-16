@@ -7,10 +7,10 @@ const theWalkingDeadSynopsis = "The Walking Dead, based on the comic book series
 
 let data =
     [
-        { title: "Black Mirror", id: "black-mirror", synopsis: blackMirrorSynopsis },
-        { title: "Breaking Bad", id: "breaking-bad", synopsis: breakingBadSynopsis },
-        { title: "Death Note", id: "death-note", synopsis: deathNoteSynopsis },
-        { title: "Game of Thrones", id: "game-of-thrones", synopsis: gameOfThronesSynopsis },
+        { title: "Black Mirror", id: "black-mirror", synopsis: blackMirrorSynopsis},
+        { title: "Breaking Bad", id: "breaking-bad", synopsis: breakingBadSynopsis},
+        { title: "Death Note", id: "death-note", synopsis: deathNoteSynopsis},
+        { title: "Game of Thrones", id: "game-of-thrones", synopsis: gameOfThronesSynopsis},
         { title: "The Wire", id: "the-wire", synopsis: theWireSynopsis},
         { title: "The Walking Dead", id: "the-walking-dead", synopsis: theWalkingDeadSynopsis},
     ]

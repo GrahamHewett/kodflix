@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
-import movieData from '../movie-data'
 import { Link, Redirect } from "react-router-dom";
 import './details.css'
 
 export default class StatefulDetails extends Component {
   constructor(props) {
     super(props);
-    //Must initialise state first
     this.state = {
       error: null,
       isLoaded: false,
-      shows: [],
-      title: '',
-      synopsis: 'Default Synopsis',
-      image: 'Default Image',
-      data: movieData
+      show: [],
     }
   }
-  //Method to alter the state
   componentDidMount() {
     fetch("/rest/shows")
     .then(res => res.json())
@@ -25,42 +18,39 @@ export default class StatefulDetails extends Component {
       (result) => {
         this.setState({
           isLoaded: true,
-          shows: result
+          show: result.find((movie) => movie.id === this.props.match.params.id)
         });
       },
-      // Note: it's important to handle errors here
-      // instead of a catch() block so that we don't swallow
-      // exceptions from actual bugs in components.
       (error) => {
         this.setState({
           isLoaded: true,
-          error
+          error: error
         });
       }
     )
-
-
-    let found = this.state.data.find((movie) => movie.id === this.props.match.params.id)
-    let name = found ? found.title : <Redirect to='/not-found' />
-    let description = found ? found.synopsis : "No Synopsis Given"
-    let picture = found ? <img src = {found.imgSrc} alt="Movie Cover"></img> : "No Image Available"
-
-      this.setState({ 
-        title: name,
-        synopsis: description,
-        image: picture 
-      });
-
   };
 
   render() {
-    return (
+    const { error, isLoaded, show } = this.state;
+
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+        return <div className="loader">Loading</div>
+    } else if (show === undefined) {
+        return <Redirect to="/not-found" />
+    } else {
+      return (
       <div id="container">
-        <div className="title"><h1>{this.state.title}</h1></div>
-        <div className="synopsis"><p>{this.state.synopsis}</p></div>
-        <div className="details-image">{this.state.image}</div>
+        <div className="title"><h1 key={show.title}>{show.title}</h1></div>
+        <div className="synopsis"><p>{show.synopsis}</p></div>
+        <div className="details-img"><p>{show.id}</p></div>
+        <div className="details-image">
+        <img src = {require(`../${show.id}.jpg`)} alt={`${show.title} Cover`}></img>
+        </div>
         <div className="return-link" ><Link exact to="/">Home</Link></div> 
       </div>
     );
+    }
   }
 };

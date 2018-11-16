@@ -11,7 +11,7 @@
     "npm-run-all": "^4.1.3"
   },
   "scripts": {
-    "start-dev": "npm-run-all -p start-frontend _start-hot-backend",
+    "start-dev": "npm-run-all -p start-frontend _start-hot-server",
     "start": "npm-run-all -s build _start-cold-server",
     "start-frontend": "react-scripts start",
     "build": "react-scripts build",
