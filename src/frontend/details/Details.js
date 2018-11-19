@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from "react-router-dom";
 import './details.css'
+import Loader from '../../common/loader/Loader'
 
 export default class StatefulDetails extends Component {
   constructor(props) {
@@ -36,7 +37,9 @@ export default class StatefulDetails extends Component {
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-        return <div className="loader">Loading</div>
+        return <div id="container">
+          <Loader />
+        </div>
     } else if (show === undefined) {
         return <Redirect to="/not-found" />
     } else {

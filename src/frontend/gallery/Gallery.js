@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink, Redirect } from 'react-router-dom'
+import Loader from '../../common/loader/Loader'
+
 
 class Gallery extends React.Component {
     constructor(props) {
@@ -35,7 +37,7 @@ class Gallery extends React.Component {
       if (error) {
         return <div>Error: {error.message}</div>;
       } else if (!isLoaded) {
-          return <div className="loader">Loading</div>
+          return <Loader />
       } else if (shows === undefined) {
           return <Redirect to="/not-found" />
       } else {
