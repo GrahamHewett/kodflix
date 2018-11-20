@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const url = ''
+const url = 'mongodb://localhost:27017'
 
 module.exports = { connect };
 
@@ -13,9 +13,3 @@ function connect() {
           });
     });
 }
-
-//   dbo.collection("shows").find({}).toArray({}, function(err, result) {
-//     if (err) throw err;
-//     console.log(result);
-//     mongoDB.close();
-//   });
