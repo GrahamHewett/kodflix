@@ -3,7 +3,7 @@ const app = express()
 const path = require('path');
 const port = process.env.PORT || 3001;
 const db = require('./db');
-const shows = require('./shows');
+// const shows = require('./shows');
 
 db.connect().then(dbo => {
 
@@ -11,6 +11,12 @@ db.connect().then(dbo => {
         dbo.collection('shows').find({}).toArray((err, results) => {
             if (err) throw err;
             res.send(results);
+        });
+    });
+    app.get('/rest/shows/:id', (req, res) => {
+        dbo.collection('shows').findOne({id: req.params.id},(err, show) => {
+            if (err) throw err;
+            res.send(show);
         });
     });
 

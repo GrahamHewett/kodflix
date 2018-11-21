@@ -13,13 +13,13 @@ export default class StatefulDetails extends Component {
     }
   }
   componentDidMount() {
-    fetch("/rest/shows")
+    fetch(`/rest/shows/${this.props.match.params.id}`)
     .then(res => res.json())
     .then(
       (result) => {
         this.setState({
           isLoaded: true,
-          show: result.find((movie) => movie.id === this.props.match.params.id)
+          show: result
         });
       },
       (error) => {

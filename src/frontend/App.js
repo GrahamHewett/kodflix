@@ -6,14 +6,9 @@ import ReactGA from 'react-ga';
 
 class App extends Component {
 
-  constructor({ history, location }) {
+  constructor() {
     super();
     ReactGA.initialize('UA-129505001-1');
-    this.trackPageView(location);
-    history.listen((location) => this.trackPageView(location));
-  }
-   trackPageView(location) {
-    ReactGA.pageview(location.pathname + location.search + location.hash);
   }
 
   render() {
