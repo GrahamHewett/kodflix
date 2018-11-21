@@ -47,7 +47,6 @@ export default class StatefulDetails extends Component {
       <div id="container">
         <div className="title"><h1 key={show.title}>{show.title}</h1></div>
         <div className="synopsis"><p>{show.synopsis}</p></div>
-        <div className="details-img"><p>{show.id}</p></div>
         <div className="details-image">
         <img src = {require(`../../common/images/${show.id}.jpg`)} alt={`${show.title} Cover`}></img>
         </div>
