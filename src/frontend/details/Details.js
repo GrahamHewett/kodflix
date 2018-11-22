@@ -34,13 +34,11 @@ export default class StatefulDetails extends Component {
   render() {
     const { error, isLoaded, show } = this.state;
 
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
+    if (!isLoaded) {
         return <div id="container">
           <Loader />
         </div>
-    } else if (show === undefined) {
+    } else if (error || show.error === 'not found!') {
         return <Redirect to="/not-found" />
     } else {
       return (

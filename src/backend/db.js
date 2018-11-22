@@ -14,7 +14,6 @@ function connect() {
         MongoClient.connect(url, function(err, mongoDB) {
             if (err) throw err;
             const dbo = mongoDB.db(dbName);
-            console.log(dbo);
             resolve(dbo); 
           });
     });

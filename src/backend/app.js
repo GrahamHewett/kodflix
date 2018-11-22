@@ -3,7 +3,6 @@ const app = express()
 const path = require('path');
 const port = process.env.PORT || 3001;
 const db = require('./db');
-// const shows = require('./shows');
 
 db.connect().then(dbo => {
 
@@ -16,14 +15,12 @@ db.connect().then(dbo => {
     app.get('/rest/shows/:id', (req, res) => {
         dbo.collection('shows').findOne({id: req.params.id},(err, show) => {
             if (err) throw err;
-            res.send(show);
+            res.send(show || { error: 'not found!' });
         });
     });
 
     //Serve any static files from the build folder
     app.use(express.static(path.join(__dirname, '../../build')));
-
-    // app.get('/rest/shows', (req, res) => res.send(shows.data))
 
     app.get('*', function (req, res) {
         res.sendFile(path.join(__dirname, '../../build', 'index.html'));
