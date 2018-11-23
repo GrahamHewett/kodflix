@@ -1,17 +1,26 @@
 .menu {
     position: absolute;
-    top: 0;
-    left:0;
+    top: 15px;
+    left: 15px;
     z-index: 1;
 }
 
-.menu-item {
+.menu-icon {
     position: absolute;
-    animation: menu 5s ease 2s 1 normal;
-    left: -100px
+    animation: menu 3s linear 1s 1 normal;
+    left: 0px;
+    top: 0px;
+    opacity: 0.5;
 }
 
-@keyframes menu{
-    from {left: -100px;}
+@keyframes menu {
+    from {left: -120px;}
     to {left: 0px;}
+}
+
+@media screen and (max-width: 600px) {
+    .menu-icon { 
+      height: 45px;
+      width: 45px;
+    }
 }

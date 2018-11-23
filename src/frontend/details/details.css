@@ -5,7 +5,7 @@
     grid-template-columns: 4fr 3fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
-    background: radial-gradient(rgb(0,0,0), rgb(65,65,65));
+    background: radial-gradient(rgb(0,0,0), rgb(75,75,75));
     font-family: 'Montserrat', sans-serif;
 }
 /* grid positions and sizes */
@@ -54,7 +54,7 @@
     color: red;
   }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   #container { 
     display: block;
   }
@@ -64,4 +64,6 @@
   .details-img, .details-image img {
     max-height: 41vh;
   }
+
+  /* make menu smaller */
 }

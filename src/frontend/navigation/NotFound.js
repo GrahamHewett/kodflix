@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-export default NotFound;
-
 const NotFound = () => {
     return (
         <div className="notFound">
@@ -12,3 +10,5 @@ const NotFound = () => {
         </div>
     );
 };
+
+export default NotFound;

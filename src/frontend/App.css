@@ -37,7 +37,7 @@ img {
   transition: bottom 0.5s linear 0.2s;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 600px){
   .gallery { 
     display: block;
   }
