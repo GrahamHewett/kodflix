@@ -1,0 +1,17 @@
+.menu {
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 1;
+}
+
+.menu-item {
+    position: absolute;
+    animation: menu 5s ease 2s 1 normal;
+    left: -100px
+}
+
+@keyframes menu{
+    from {left: -100px;}
+    to {left: 0px;}
+}
