@@ -7,9 +7,15 @@ import { createBrowserHistory } from "history";
 
 class App extends Component {
 
-  constructor() {
-    super();
-    ReactGA.initialize('UA-129505001-1');
+  constructor(props) {
+    super(props);
+
+    ReactGA.initialize('UA-129505001-1', {
+    gaOptions: {
+      siteSpeedSampleRate: 100
+    }
+    });
+
     const history = createBrowserHistory();
     const location = history.location;
     this.trackPageView(location);
@@ -17,7 +23,9 @@ class App extends Component {
   }
 
   trackPageView(location) {
-    ReactGA.pageview(location.pathname + location.search + location.hash)
+    // ReactGA.pageview(location.pathname + location.search + location.hash)
+    ReactGA.pageview(window.location.pathname + window.location.search + window.location.hash);
+
   }
 
   render() {
