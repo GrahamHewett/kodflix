@@ -4,7 +4,7 @@
     height: 100vh;
     grid-template-columns: 4fr 3fr;
     grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-row-gap: 0px;
     background: radial-gradient(rgb(0,0,0), rgb(75,75,75));
     font-family: 'Montserrat', sans-serif;
 }

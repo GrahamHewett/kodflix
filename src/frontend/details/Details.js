@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import './details.css'
 import Loader from '../../common/loader/Loader'
 
@@ -48,7 +48,6 @@ export default class StatefulDetails extends Component {
         <div className="details-image">
         <img src = {require(`../../common/images/${show.id}.jpg`)} alt={`${show.title} Cover`}></img>
         </div>
-        <div className="return-link" ><Link exact to="/">Home</Link></div> 
       </div>
     );
     }

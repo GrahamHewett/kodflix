@@ -7,7 +7,7 @@ import NotFound from '../navigation/NotFound';
 export default class Routes extends React.Component {
   render() {
     return (
-      <div>
+      <div id='views'>
         <Switch>
         <Route path="/" component={Gallery} exact />
         <Route path="/not-found"component={NotFound} exact />

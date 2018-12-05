@@ -17,7 +17,6 @@ class App extends Component {
   }
 
   trackPageView(location) {
-    console.log('XXX checking', location.pathname + location.search + location.hash)
     ReactGA.pageview(location.pathname + location.search + location.hash);
   }
 
