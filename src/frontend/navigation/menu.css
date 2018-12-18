@@ -41,13 +41,19 @@
     color: #818181;
     display: block;
     transition: 0.3s;
+    transition: background-color 0.5s ease;
+    display: flex;
+    align-items: flex-start;
 }
 
 .sidenav a:hover {
     color: #f1f1f1;
 }
 
-
+.sidenav a img {
+    width: 30px;
+    margin-right: 15px;
+}
 
 #views {
     transition: margin-left .5s;
@@ -57,3 +63,4 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+

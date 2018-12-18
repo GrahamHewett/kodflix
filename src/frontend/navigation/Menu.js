@@ -1,6 +1,9 @@
 import React from 'react'
 import './menu.css';
 import { Link } from "react-router-dom";
+import homeIcon from '../../common/images/home2.svg'
+import tvIcon from '../../common/images/tvIcon.svg'
+
 
 export default class Menu extends React.Component {
   constructor() {
@@ -32,8 +35,8 @@ export default class Menu extends React.Component {
             <span className='menu-btn' onClick={() => this.openNav()}> &#9776; Menu</span>
             <div id="mySidenav" className="sidenav"> {/*eslint-disable-next-line*/}
                 <a href="javascript:void(0)" className="closebtn" onClick={() => this.closeNav()}>&times;</a>
-                <Link exact='true' to="/">Home</Link> 
-                <Link exact='true' to="/manage/tv-shows">Manage TV Shows</Link> 
+                <Link exact='true' to="/"><img src ={homeIcon} alt='Return to Homepage'></img><h4>Home</h4></Link> 
+                <Link exact='true' to="/manage/tv-shows"><img src ={tvIcon} alt='Return to Homepage'></img><h4>Manage TV Shows</h4></Link> 
             </div>
         </div>
 

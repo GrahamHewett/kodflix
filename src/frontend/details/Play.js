@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
-import './details.css'
 import Loader from '../../common/loader/Loader'
 
 export default class StatefulDetails extends Component {
@@ -42,13 +41,11 @@ componentDidMount() {
         return <Redirect to="/not-found" />
     } else {
       return (
-      <div id="container" style = {{backgroundImage: `url(${require(`../../common/images/${show.id}-wallpaper.jpg`)})`
-    }}>
-        {/* <div className="title"><h1 key={show.title}>{show.title}</h1></div> */}
-        <div className="synopsis"><p>{show.synopsis}</p></div>
-        <div className="details-image">
+        <div className='trailer'>
+            <iframe width="100%" height="900px" title='Play Trailer'
+                src={show.videoRef} frameBorder="0"
+                allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
-      </div>
     );
     }
   }
