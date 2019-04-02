@@ -18,8 +18,8 @@
     "react-scripts": "2.0.5"
   },
   "scripts": {
-    "start-dev": "npm-run-all -p start-db start-frontend _start-hot-server",
     "start": "NODE_ENV=production npm-run-all -s build _start-cold-server",
+    "start-dev": "npm-run-all -p start-db start-frontend _start-hot-server",
     "start-frontend": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
