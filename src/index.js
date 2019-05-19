@@ -8,7 +8,7 @@ import { BrowserRouter as Router} from "react-router-dom";
 
 ReactDOM.render(
   <Router>
-    <App />
+    <App />     
   </Router>
   , document.getElementById('root'));
 
@@ -16,3 +16,7 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+if(module.hot) {
+  module.hot.accept();
+}

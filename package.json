@@ -20,11 +20,12 @@
   "scripts": {
     "start": "NODE_ENV=production npm-run-all -s build _start-cold-server",
     "start-dev": "npm-run-all -p start-db start-frontend _start-hot-server",
+    "start-both": "npm-run-all -p start-frontend _start-hot-server",
     "start-frontend": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-db": "sudo service mongod start",
+    "start-db": "sudo mongod",
     "_start-hot-server": "nodemon src/backend/app.js",
     "_start-cold-server": "node src/backend/app.js"
   },
