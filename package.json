@@ -38,8 +38,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-    "ajv": "^6.5.5"
-  },
   "proxy": "http://localhost:3001"
 }
