@@ -21,13 +21,12 @@ db.connect().then(dbo => {
 
     //Serve any static files from the build folder
     app.use(express.static(path.join(__dirname, '../../build')));
-
     app.get('*', function (req, res) {
         res.sendFile(path.join(__dirname, '../../build', 'index.html'));
     });
+    // Handle React routing, return all requests to React app
 
     app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 
-    // Handle React routing, return all requests to React app
 })
