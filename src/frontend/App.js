@@ -1,33 +1,29 @@
-import React, { Component } from 'react';
+import React from "react";
 import { withRouter } from "react-router-dom";
-import Routes from './navigation/Routes';
-import './App.css';
-import ReactGA from 'react-ga';
-import Menu from './navigation/Menu'
+import ReactGA from "react-ga";
+import { createBrowserHistory } from "history";
+import Routes from "./navigation/Routes";
+import Menu from "./navigation/Menu";
+import "./App.css";
 
-class App extends Component {
+ReactGA.initialize("UA-129505001-1");
+const browserHistory = createBrowserHistory();
+browserHistory.listen((location, action) => {
+  ReactGA.pageview(location.pathname + location.search);
+  // ReactGA.pageview(location.pathname + location.search + location.hash);
+});
 
-  constructor(props) {
-    super(props);
-    ReactGA.initialize('UA-129505001-1')
-    this.trackPageView(window.location);
-    props.history.listen(location => {
-      this.trackPageView(location);
-    })
-  }
+function App() {
+  React.useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
-  trackPageView(location) {
-    ReactGA.pageview(location.pathname + location.search + location.hash);
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Menu />
-        <Routes />
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <Menu />
+      <Routes />
+    </div>
+  );
 }
 
 export default withRouter(App);
