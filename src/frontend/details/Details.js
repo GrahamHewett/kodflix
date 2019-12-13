@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import "./details.css";
 import Loader from "../../common/loader/Loader";
 
 export default function Details(props) {
+  const {id} = useParams()
   const [error, setError] = useState(null);
   const [show, setShow] = useState([]);
-
   React.useEffect(() => {
-    fetch(`/shows/${props.match.params.id}`)
+    fetch(`/show/${id}`)
       .then(res => res.json())
       .then(
         show => setShow(show),
         error => setError(error)
       );
-  }, []);
+  }, [id]);
 
   return show && show.length === 0 ? <div id="container"><Loader /></div> :
     error || show.error === "not found!" ? <Redirect to="/not-found" /> :
