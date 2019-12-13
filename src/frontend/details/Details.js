@@ -13,7 +13,7 @@ export default class StatefulDetails extends Component {
     }
   }
 componentDidMount() {
-    fetch(`/rest/shows/${this.props.match.params.id}`)
+    fetch(`/shows/${this.props.match.params.id}`)
     .then(res => res.json())
     .then(
       (result) => {

@@ -9,11 +9,11 @@ module.exports = { connect };
 
 function connect() {
     return new Promise((resolve, reject) => {
-        MongoClient.connect(url, { useNewUrlParser: true }, function(err, mongoDB) {
-            if (err) {throw err};
+        MongoClient.connect(url,{ useNewUrlParser: true, useUnifiedTopology: true },
+            function(err, mongoDB) {
+            if (err) {reject(err)};
             const dbo = mongoDB.db(dbName);
             resolve(dbo); 
-          }).
-          catch(err => console.log(err));
+          }).catch(err => console.log(err));
     });
 }

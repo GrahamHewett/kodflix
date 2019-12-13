@@ -26,13 +26,13 @@
     padding-top: 60px;
 }
 
-.sidenav .closebtn {
+/* .sidenav .XClose {
     position: absolute;
-    top: 0;
+    top: 20px;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-}
+} */
 
 .sidenav a {
     padding: 20px 12px 5px 12px;

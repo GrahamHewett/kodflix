@@ -1,54 +1,39 @@
-import React from 'react';
-import { NavLink, Redirect } from 'react-router-dom'
-import Loader from '../../common/loader/Loader'
+import React, { useState } from "react";
+import { NavLink, Redirect } from "react-router-dom";
+import Loader from "../../common/loader/Loader";
 
+export default function Gallery() {
+  const [error, setError] = useState(null);
+  const [shows, setShows] = useState([]);
 
-class Gallery extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          error: null,
-          isLoaded: false,
-          shows: [],
-        }
-      }
+  React.useEffect(() => {
+    fetch("/shows")
+      .then(res => res.json())
+      .then(
+        result => setShows(result),
+        error => setError(error)
+      );
+  }, []);
 
-    componentDidMount() {
-       fetch("/rest/shows")
-       .then(res => res.json())
-       .then(
-         (result) => {
-           this.setState({
-             isLoaded: true,
-             shows: result
-           });
-         },
-         (error) => {
-            this.setState({
-              isLoaded: true,
-              error: error
-            });
-          }
-        )
-    }
-    render() {
-      const { error, isLoaded, shows } = this.state;
-
-      if (error) {
-        return <div>Error: {error.message}</div>;
-      } else if (!isLoaded) {
-          return <Loader />
-      } else if (shows === undefined) {
-          return <Redirect to="/not-found" />
-      } else {
-        return (<div className = 'gallery'>{shows.map((show) =>
-            <div className = "cover" key= {show.id}>
-                <h2>{show.title}</h2>
-                <NavLink to={show.id} exact >
-                    <img src={require(`../../common/images/${show.id}.jpg`)} alt={`${show.title} Cover`}></img>
-                </NavLink>
-            </div>)}</div>)
-        }
-      }
-    };
-export default Gallery;
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  } else if (shows && shows.length === 0) {
+    return <Loader />;
+  } else if (shows === undefined) {
+    return <Redirect to="/not-found" />;
+  } else {
+    return <div className="gallery">
+        {shows.map(show => (
+          <div className="cover" key={show.id}>
+            <h2>{show.title}</h2>
+            <NavLink to={show.id} exact>
+              <img
+                src={require(`../../common/images/${show.id}.jpg`)}
+                alt={`${show.title} Cover`}
+              ></img>
+            </NavLink>
+          </div>
+        ))}
+    </div>
+  }
+}
