@@ -6,7 +6,6 @@ import Play from '../details/Play';
 import NotFound from '../navigation/NotFound';
 
 const closeMenu = () => {
-  console.log('closeMenu run')
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("views").style.marginLeft = "0";
   document.getElementById("views").style.opacity = "1";

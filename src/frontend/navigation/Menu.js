@@ -5,10 +5,10 @@ import homeIcon from "../../common/images/home.svg";
 import tvIcon from "../../common/images/tvIcon.svg";
 
 export default function Menu() {
-  const [showMenu, toggleMenu] = React.useState(false);
+  // const [showMenu, toggleMenu] = React.useState(false);
 
-  const menuEvent = () => toggleMenu(!showMenu);
-  // console.log(`Your menu click event is working! ${this.state.showMenu}`)
+  // const menuEvent = () => toggleMenu(!showMenu);
+  // // console.log(`Your menu click event is working! ${this.state.showMenu}`)
 
   const openMenu = () => {
     document.getElementById("mySidenav").style.width = "250px";

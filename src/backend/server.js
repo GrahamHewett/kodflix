@@ -9,6 +9,11 @@ app.get('/shows', (req, res) => {
     res.send(shows());
 })
 
+app.get('/show/:id', (req, res) => {
+    console.log(req.params.id);
+    res.send(shows().find(show => show.id === req.params.id));
+})
+
 // db.connect().then(dbo => {
 //     app.get('/db/shows', (req, res) => {
 //         dbo.collection('shows').find({}).toArray((err, results) => {
