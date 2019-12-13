@@ -57,6 +57,7 @@
 
 #views {
     transition: margin-left .5s;
+    height: 100vh;
 }
 
 @media screen and (max-height: 450px) {

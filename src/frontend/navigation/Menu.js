@@ -16,14 +16,7 @@ export default function Menu() {
     document.getElementById("views").style.marginLeft = "250px";
   };
 
-  const closeMenu = () => {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("views").style.marginLeft = "0";
-    document.getElementById("views").style.opacity = "1";
-  };
-
-  return (
-    <div className="menu">
+  return <div className="menu">
       <span className="menu-btn" onClick={() => openMenu()}>
         &#9776; Menu
       </span>
@@ -42,5 +35,5 @@ export default function Menu() {
         </Link>
       </div>
     </div>
-  );
 }
+//check chrome bookmarks for align icon and text in menus.
