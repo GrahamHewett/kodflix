@@ -9,7 +9,6 @@ export default class Menu extends React.Component {
 
   menuEvent() {
     this.setState({showMenu : !this.state.showMenu})
-    console.log(`Your menu click event is working! ${this.state.showMenu}`)
   }
 
     render() {

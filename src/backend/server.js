@@ -10,7 +10,6 @@ app.get('/shows', (req, res) => {
 })
 
 app.get('/show/:id', (req, res) => {
-    console.log(req.params.id);
     res.send(shows().find(show => show.id === req.params.id));
 })
 
