@@ -22,6 +22,7 @@
   grid-column: 2 / 3;
   max-height: 75vh;
   align-self: center;
+  backdrop-filter: brightness(50%);
 }
 
 /* child element styles */
