@@ -7,7 +7,7 @@ export default function Gallery() {
   const [shows, setShows] = useState([]);
 
   React.useEffect(() => {
-    fetch("/shows")
+    fetch("/api/shows")
       .then(res => res.json())
       .then(
         result => setShows(result),

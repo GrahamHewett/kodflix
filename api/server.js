@@ -5,11 +5,11 @@ const port = process.env.PORT || 3001;
 const shows = require('./showsData')
 // const db = require('./db');
 
-app.get('/shows', (req, res) => {
+app.get('/api/shows', (req, res) => {
     res.send(shows());
 })
 
-app.get('/show/:id', (req, res) => {
+app.get('/api/show/:id', (req, res) => {
     res.send(shows().find(show => show.id === req.params.id));
 })
 

@@ -1,0 +1,17 @@
+{
+  "name": "kodflix_api",
+  "version": "1.0.0",
+  "description": "Node backend for use as cloud functions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "_start-dev": "nodemon server.js",
+  },
+  "keywords": [
+    "node",
+    "cloud",
+    "functions"
+  ],
+  "author": "Graham Hewett",
+  "license": "ISC"
+}

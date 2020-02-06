@@ -9,7 +9,7 @@ export default function Play(props) {
   const [show, setShow] = useState([]);
 
   React.useEffect(() => {
-    fetch(`/show/${id}`)
+    fetch(`/api/show/${id}`)
       .then(res => res.json())
       .then(
         show => setShow(show),

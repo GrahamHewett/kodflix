@@ -8,7 +8,7 @@ export default function Details(props) {
   const [error, setError] = useState(null);
   const [show, setShow] = useState([]);
   React.useEffect(() => {
-    fetch(`/show/${id}`)
+    fetch(`/api/show/${id}`)
       .then(res => res.json())
       .then(
         show => setShow(show),
