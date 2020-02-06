@@ -3,7 +3,6 @@ const app = express()
 const path = require('path');
 const port = process.env.PORT || 3001;
 const shows = require('./showsData')
-// const db = require('./db');
 
 app.get('/api/shows', (req, res) => {
     res.send(shows());
@@ -13,6 +12,7 @@ app.get('/api/show/:id', (req, res) => {
     res.send(shows().find(show => show.id === req.params.id));
 })
 
+// const db = require('./db');
 // db.connect().then(dbo => {
 //     app.get('/db/shows', (req, res) => {
 //         dbo.collection('shows').find({}).toArray((err, results) => {
@@ -29,10 +29,10 @@ app.get('/api/show/:id', (req, res) => {
 //});
 
     //Serve any static files from the build folder
-    app.use(express.static(path.join(__dirname, '../../build')));
-    app.get('*', function (req, res) {
-        res.sendFile(path.join(__dirname, '../../build', 'index.html'));
-    });
+    // app.use(express.static(path.join(__dirname, '../../build')));
+    // app.get('*', function (req, res) {
+    //     res.sendFile(path.join(__dirname, '../../build', 'index.html'));
+    // });
     // Handle React routing, return all requests to React app
 
-    app.listen(port, () => console.log(`Server listening on port ${port}!`))
+app.listen(port, () => console.log(`Server listening on port ${port}!`))

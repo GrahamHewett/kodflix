@@ -7,26 +7,23 @@
   },
   "dependencies": {
     "dotenv": "8.2.0",
-    "express": "4.17.1",
-    "mongodb": "3.4.0",
-    "nodemon": "2.0.2",
-    "npm-run-all": "4.1.5",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-ga": "2.7.0",
     "react-router-dom": "5.1.2",
     "react-scripts": "3.3.0"
   },
+  "dev-dependencies": {
+    "npm-run-all": "4.1.5"
+  },
   "scripts": {
-    "start": "NODE_ENV=production npm-run-all -s build _start-cold-server",
-    "start-dev": "npm-run-all -p start-frontend _start-hot-server",
-    "start-frontend": "react-scripts start",
+    "start": "run-p start:**",
+    "start:app": "react-scripts start",
+    "start:server": "cd api && npm start",
     "build": "react-scripts build",
     "now-build": "react-scripts build && mv build dist",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "_start-hot-server": "nodemon api/server.js",
-    "_start-cold-server": "node api/server.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
